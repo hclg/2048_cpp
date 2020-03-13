@@ -23,7 +23,8 @@ sudo apt-get install libncurses5-dev
 ```
 编译：
 ```bash
-g++ 2048.cpp -o 2048 -lcurses
+Linux/Mac: g++ 2048.cpp -l ncurses -o 2048 
+Windows: g++ 2048.cpp C:\pdcurs36\wincon\pdcurses.a -I C:\pdcurs36\ -o 2048 
 ```
 为了尝试一下curses库，做了这个小游戏，代码有点丑有待改进
 源代码：
