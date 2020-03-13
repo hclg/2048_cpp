@@ -7,7 +7,7 @@
 #include <queue>
 #include <ctime>
 #include <iostream>
-#include <curses.h>
+#include <pdcurses.h>
 using namespace std;
 #define N 4 // 格子数
 #define SI 5 //每个格子的字符长度
@@ -53,11 +53,11 @@ class game2048 {
 						for (int k = 1; k <= N; ++k)
 							draw(2*i, offset+j*SI+k, '-');
 					}
-					
+
 				}
 			}
 			mvprintw(2*N+2, -1/2, "W(UP),S(DOWN),A(LEFT),D(RIGHT),R(RESTART),Q(QUIT)");
-			mvprintw(2*N+3, SI, "HCLG");	
+			mvprintw(2*N+3, SI, "HCLG");
 			if (status == S_FAIL)
 				mvprintw(3*N, SI, " YOU LOSE,PRESS R TO CONTINUE ");
 			if (status == S_WIN)
@@ -68,9 +68,9 @@ class game2048 {
 				for (int j = 0; j < N; ++j)
 					data[i][j] = 16>>i>>j;//调试用的测试数据
 		}
-		
+
 	private:
-		
+
 	void nowstatus() {
 		bool f = true;
 		for (int i = 0; i < N; ++i) {
@@ -194,7 +194,7 @@ class game2048 {
 	}
 	bool randNew() {
 		vector<int> emp;
-		for (int i = 0; i < N; ++i) 
+		for (int i = 0; i < N; ++i)
 			for (int j = 0; j < N; ++j)
 				if (data[i][j] == 0)
 					emp.push_back(i*N+j);
@@ -231,7 +231,7 @@ int main() {
     initialize();
     game2048 game;
     do {
-	game.man();
+        game.man();
         //move(5,5); //移动光标位置
 	// addch(ch); //当前位置画字符ch
 	// mvprintw(2, 2, "HCL");//显示在2,2的位置
