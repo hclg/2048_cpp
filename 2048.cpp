@@ -7,7 +7,7 @@
 #include <queue>
 #include <ctime>
 #include <iostream>
-#include <pdcurses.h>
+#include <curses.h>
 using namespace std;
 #define N 4 // 格子数
 #define SI 5 //每个格子的字符长度
